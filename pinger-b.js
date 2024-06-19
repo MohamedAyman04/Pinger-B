@@ -1,5 +1,5 @@
 const keepPingerAAlive = () => {
-  fetch("https://example.com/pinger-a.html") // Replace with the actual URL of Pinger A
+  fetch("https://pinger-a.onrender.com") // Replace with the actual URL of Pinger A
     .then((response) => {
       if (response.ok) {
         document.getElementById(
