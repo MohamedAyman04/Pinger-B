@@ -1,15 +1,9 @@
 const keepPingerAAlive = () => {
-  fetch("https://pinger-a.onrender.com") // Replace with the actual URL of Pinger A
-    .then((response) => {
-      if (response.ok) {
-        document.getElementById(
-          "status-pinger-a"
-        ).innerText = `Pinger A is alive. Last check: ${new Date().toLocaleTimeString()}`;
-      } else {
-        document.getElementById(
-          "status-pinger-a"
-        ).innerText = `Failed to contact Pinger A. Last attempt: ${new Date().toLocaleTimeString()}`;
-      }
+  fetch("https://pinger-a.onrender.com", { mode: "no-cors" }) // Replace with the actual URL of Pinger A
+    .then(() => {
+      document.getElementById(
+        "status-pinger-a"
+      ).innerText = `Contacted Pinger A. Last attempt: ${new Date().toLocaleTimeString()}`;
     })
     .catch((error) => {
       document.getElementById(
